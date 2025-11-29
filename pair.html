@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JUNE X-BOT PAIR CODE</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background: #000000;
+      font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Enhanced Background Effects */
+    .cyber-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -3;
+    }
+
+    .gradient-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(0, 255, 170, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(0, 136, 255, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(255, 0, 170, 0.1) 0%, transparent 50%);
+      z-index: -2;
+      animation: gradientShift 8s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0%, 100% {
+        background: 
+          radial-gradient(circle at 20% 80%, rgba(0, 255, 170, 0.15) 0%, transparent 50%),
+          radial-gradient(circle at 80% 20%, rgba(0, 136, 255, 0.15) 0%, transparent 50%),
+          radial-gradient(circle at 40% 40%, rgba(255, 0, 170, 0.1) 0%, transparent 50%);
+      }
+      50% {
+        background: 
+          radial-gradient(circle at 80% 80%, rgba(0, 255, 170, 0.15) 0%, transparent 50%),
+          radial-gradient(circle at 20% 20%, rgba(0, 136, 255, 0.15) 0%, transparent 50%),
+          radial-gradient(circle at 60% 60%, rgba(255, 0, 170, 0.1) 0%, transparent 50%);
+      }
+    }
+
+    .grid-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(rgba(0, 255, 170, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 170, 0.05) 1px, transparent 1px);
+      background-size: 50px 50px;
+      z-index: -1;
+      animation: gridMove 20s linear infinite;
+    }
+
+    @keyframes gridMove {
+      0% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(50px, 50px);
+      }
+    }
+
+    .scanlines {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        to bottom,
+        transparent 50%,
+        rgba(0, 0, 0, 0.1) 50%
+      );
+      background-size: 100% 4px;
+      z-index: -1;
+      pointer-events: none;
+      animation: scanline 10s linear infinite;
+    }
+
+    @keyframes scanline {
+      0% {
+        background-position: 0 0;
+      }
+      100% {
+        background-position: 0 100%;
+      }
+    }
+
+    /* Animated background particles */
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      animation: float 15s infinite linear;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.7;
+      }
+      90% {
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      padding: 20px;
+    }
+
+    .box {
+      width: 100%;
+      max-width: 420px;
+      padding: 35px 30px;
+      position: relative;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      transform: perspective(1000px) rotateY(0deg);
+      box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.8),
+        0 0 50px rgba(0, 255, 170, 0.2);
+      border: 1px solid rgba(0, 255, 170, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+    }
+
+    .box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #00ffaa, #0088ff, #ff00aa, #00ffaa);
+      animation: shimmer 3s infinite linear;
+    }
+
+    .box::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, 
+        transparent, 
+        rgba(0, 255, 170, 0.1), 
+        transparent);
+      animation: shine 6s infinite;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: -100% 0; }
+      100% { background-position: 200% 0; }
+    }
+
+    @keyframes shine {
+      0% { left: -100%; }
+      20% { left: 100%; }
+      100% { left: 100%; }
+    }
+
+    .box:hover {
+      transform: perspective(1000px) rotateY(5deg);
+      box-shadow: 
+        0 15px 40px rgba(0, 0, 0, 0.9),
+        0 0 60px rgba(0, 255, 170, 0.3);
+    }
+
+    #text {
+      color: #e5f5f1;
+    }
+
+    .centered-text {
+      color: #e5f5f1;
+      margin-bottom: 15px;
+      text-shadow: 0 0 10px rgba(0, 255, 170, 0.5);
+    }
+
+    .user-icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #00ffaa;
+      text-shadow: 0 0 15px rgba(0, 255, 170, 0.7);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    .subtitle {
+      color: rgba(229, 245, 241, 0.8);
+      margin: 15px 0;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    .input-container {
+      display: flex;
+      background: rgba(0, 255, 170, 0.05);
+      border-radius: 12px;
+      padding: 0.4rem;
+      gap: 0.3rem;
+      width: 100%;
+      margin: 25px 0;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(0, 255, 170, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .input-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, 
+        transparent, 
+        rgba(0, 255, 170, 0.1), 
+        transparent);
+      transition: left 0.5s ease;
+    }
+
+    .input-container:hover::before {
+      left: 100%;
+    }
+
+    .input-container input {
+      border-radius: 10px 0 0 10px;
+      background: rgba(0, 255, 170, 0.1);
+      box-shadow: inset 5px 5px 8px rgba(0, 0, 0, 0.3), inset -5px -5px 8px rgba(0, 255, 170, 0.05);
+      width: 100%;
+      flex-basis: 75%;
+      padding: 1rem;
+      border: none;
+      border-left: 2px solid #00ffaa;
+      color: #e5f5f1;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .input-container input:focus {
+      border-left: 2px solid #0088ff;
+      outline: none;
+      box-shadow: 
+        inset 5px 5px 8px rgba(0, 0, 0, 0.3), 
+        inset -5px -5px 8px rgba(0, 255, 170, 0.05),
+        0 0 15px rgba(0, 136, 255, 0.5);
+      background: rgba(0, 255, 170, 0.15);
+    }
+
+    .input-container button {
+      --color: #e5f5f1;
+      --color2: #000000;
+      flex-basis: 25%;
+      padding: 1rem;
+      background: rgba(0, 255, 170, 0.1);
+      font-weight: 700;
+      letter-spacing: 0.2rem;
+      text-transform: uppercase;
+      color: var(--color);
+      border: none;
+      border-radius: 0 10px 10px 0;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .input-container button::after, .input-container button::before {
+      content: '';
+      display: block;
+      height: 100%;
+      width: 100%;
+      transform: skew(90deg) translate(-50%, -50%);
+      position: absolute;
+      inset: 50%;
+      left: 25%;
+      z-index: -1;
+      transition: .5s ease-out;
+      background: linear-gradient(45deg, #00ffaa, #0088ff, #ff00aa);
+    }
+
+    .input-container button::before {
+      top: -50%;
+      left: -25%;
+      transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+    }
+
+    .input-container button:hover::before {
+      transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+    }
+
+    .input-container button:hover::after {
+      transform: skew(45deg) translate(-50%, -50%);
+    }
+
+    .input-container button:hover {
+      color: var(--color2);
+      transform: translateY(-3px);
+      box-shadow: 
+        0 6px 15px rgba(0, 255, 170, 0.4),
+        0 0 20px rgba(0, 255, 170, 0.3);
+    }
+
+    .input-container button:active {
+      filter: brightness(.9);
+      transform: translateY(0);
+    }
+
+    #waiting-message {
+      display: none;
+      color: rgba(229, 245, 241, 0.7);
+      margin-top: 10px;
+      font-style: italic;
+      text-shadow: 0 0 5px rgba(0, 255, 170, 0.5);
+    }
+
+    main#pair {
+      margin-top: 20px;
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .code-display {
+      background: rgba(0, 255, 170, 0.05);
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid rgba(0, 255, 170, 0.2);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .code-display::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, 
+        transparent, 
+        rgba(0, 255, 170, 0.1), 
+        transparent);
+      transition: left 0.5s ease;
+    }
+
+    .code-display:hover::before {
+      left: 100%;
+    }
+
+    .code-display:hover {
+      background: rgba(0, 255, 170, 0.1);
+      transform: translateY(-3px);
+      box-shadow: 
+        0 6px 15px rgba(0, 0, 0, 0.6),
+        0 0 20px rgba(0, 255, 170, 0.2);
+    }
+
+    .code-text {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #e5f5f1;
+      text-shadow: 0 0 5px rgba(0, 255, 170, 0.5);
+    }
+
+    .code-value {
+      color: #00ffaa;
+      text-shadow: 0 0 10px rgba(0, 255, 170, 0.7);
+    }
+
+    .footer {
+      margin-top: 25px;
+      color: rgba(229, 245, 241, 0.7);
+      font-size: 0.8rem;
+      text-align: center;
+      padding: 15px;
+      border-top: 1px solid rgba(0, 255, 170, 0.2);
+      width: 100%;
+      max-width: 420px;
+      position: relative;
+    }
+
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, 
+        transparent, 
+        #00ffaa, 
+        #0088ff, 
+        #ff00aa, 
+        transparent);
+    }
+
+    .glow-text {
+      text-shadow: 
+        0 0 5px currentColor,
+        0 0 10px currentColor,
+        0 0 15px currentColor;
+      animation: textGlow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes textGlow {
+      from {
+        text-shadow: 
+          0 0 5px currentColor,
+          0 0 10px currentColor;
+      }
+      to {
+        text-shadow: 
+          0 0 10px currentColor,
+          0 0 20px currentColor,
+          0 0 30px currentColor;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .box {
+        width: 95%;
+        padding: 25px 15px;
+      }
+
+      .input-container {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .input-container input {
+        border-radius: 10px;
+        width: 100%;
+      }
+
+      .input-container button {
+        padding: 0.8rem;
+        border-radius: 10px;
+        width: 100%;
+      }
+
+      .user-icon {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Enhanced Background Elements -->
+  <div class="cyber-bg"></div>
+  <div class="gradient-bg"></div>
+  <div class="grid-overlay"></div>
+  <div class="scanlines"></div>
+  <div class="particles" id="particles"></div>
+
+  <div class="container">
+    <div class="main">
+      <div class="box" id="box">
+        <div id="text">
+          <i class="fas fa-robot user-icon"></i>
+          <h3 class="centered-text">XHYPHER BOTS PAIR CODE</h3>
+          <p class="subtitle">By Humans For Humans!</p>
+          <p class="subtitle">Enter Your Number with Country Code</p>
+          
+          <div class="input-container">
+            <input placeholder="26378XXXXXX" type="number" id="number" placeholder="Enter your Phone Number with Country Code" name="">
+            <button id="submit">Submit</button>
+          </div>
+          
+          <a id="waiting-message" class="centered-text" style="display: none;">Please wait a moment...</a>
+          
+          <main id="pair"></main>
+        </div>
+      </div>
+      <div class="footer">
+        &copy; 2025 xhypher BOT | All Rights Reserved <span class="glow-text">💘</span>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>
+  <script>
+    // Create animated background particles
+    function createParticles() {
+      const particlesContainer = document.getElementById('particles');
+      const particleCount = 20;
+      
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        
+        // Random properties
+        const size = Math.random() * 6 + 2;
+        const left = Math.random() * 100;
+        const animationDuration = Math.random() * 20 + 10;
+        const animationDelay = Math.random() * 5;
+        const colorValue = Math.random();
+        
+        // Different colors based on random value
+        let color;
+        if (colorValue < 0.33) {
+          color = 'rgba(0, 255, 170, 0.4)';
+        } else if (colorValue < 0.66) {
+          color = 'rgba(0, 136, 255, 0.4)';
+        } else {
+          color = 'rgba(255, 0, 170, 0.4)';
+        }
+        
+        particle.style.cssText = `
+          width: ${size}px;
+          height: ${size}px;
+          left: ${left}%;
+          background: ${color};
+          animation-delay: ${animationDelay}s;
+          animation-duration: ${animationDuration}s;
+        `;
+        
+        particlesContainer.appendChild(particle);
+      }
+    }
+
+    // Initialize particles when page loads
+    document.addEventListener('DOMContentLoaded', createParticles);
+
+    let a = document.getElementById("pair");
+    let b = document.getElementById("submit");
+    let c = document.getElementById("number");
+    let box = document.getElementById("box");
+    let waitingMessage = document.getElementById("waiting-message");
+
+    async function Copy() {
+      let text = document.getElementById("copy").innerText;
+      let obj = document.getElementById("copy");
+      await navigator.clipboard.writeText(obj.innerText.replace('CODE: ', ''));
+      obj.innerText = "COPIED!";
+      obj.style = "color:#00ff00;font-weight:bold;text-shadow:0 0 10px #00ff00";
+      setTimeout(() => {
+        obj.innerText = text;
+        obj.style = "color:white;font-weight:bold;text-shadow:0 0 10px rgba(0, 255, 170, 0.7)";
+      }, 1500);
+    }
+
+    b.addEventListener("click", async (e) => {
+      e.preventDefault();
+      if (!c.value) {
+        a.innerHTML = '<div class="code-display"><span style="color:#ff6b6b;font-weight:bold;text-shadow:0 0 10px rgba(255, 107, 107, 0.7)">Enter your WhatsApp number with Country Code</span></div>';
+      } else if (c.value.replace(/[^0-9]/g, "").length < 11) {
+        a.innerHTML = '<div class="code-display"><span style="color:#ff6b6b;font-weight:bold;text-shadow:0 0 10px rgba(255, 107, 107, 0.7)">Invalid Number</span></div>';
+      } else {
+        const Nick = c.value.replace(/[^0-9]/g, "");
+        let bb = "";
+        let bbc = "";
+        const cc = Nick.split('');
+        cc.map(a => {
+          bbc += a;
+          if (bbc.length == 3) {
+            bb += " " + a;
+          } else if (bbc.length == 8) {
+            bb += " " + a;
+          } else {
+            bb += a;
+          }
+        });
+        c.type = "text";
+        c.value = "+" + bb;
+        c.style = "color:#e5f5f1;font-size:18px";
+        a.innerHTML = '<div class="code-display"><span style="color:#e5f5f1;font-weight:bold">Processing...</span></div>';
+        waitingMessage.style.display = "block";
+        
+        try {
+          let { data } = await axios(`/code?number=${Nick}`);
+          let code = data.code || "Service Unavailable";
+          a.innerHTML = '<div class="code-display" id="copy" onclick="Copy()"><span class="code-text">CODE: <span class="code-value">' + code + '</span></span></div>';
+        } catch (error) {
+          a.innerHTML = '<div class="code-display"><span style="color:#ff6b6b;font-weight:bold;text-shadow:0 0 10px rgba(255, 107, 107, 0.7)">Error: Service Unavailable</span></div>';
+        } finally {
+          waitingMessage.style.display = "none";
+        }
+      }
+    });
+  </script>
+</body>
+  </html>
